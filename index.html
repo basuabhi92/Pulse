@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>UniHub</title>
+    <style>
+        :root {
+            --bg: #f6f7f9;
+            --fg: #111827;
+            --muted: #6b7280;
+            --card: #fff;
+            --b: #e5e7eb;
+        }
+
+        html,
+        body,
+        #root {
+            height: 100%
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--fg);
+            font: 14px/1.4 system-ui, Segoe UI, Roboto, Helvetica, Arial
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 24px
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--b);
+            border-radius: 14px;
+            padding: 16px
+        }
+
+        .btn {
+            appearance: none;
+            border: 1px solid var(--b);
+            border-radius: 12px;
+            padding: 8px 12px;
+            background: #111827;
+            color: #fff
+        }
+
+        .btn.ghost {
+            background: #fff;
+            color: #111827
+        }
+
+        .row {
+            display: flex;
+            gap: 12px;
+            align-items: center
+        }
+
+        .grid {
+            display: grid;
+            gap: 12px
+        }
+
+        .grid.cols-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr))
+        }
+
+        .grid.cols-3 {
+            grid-template-columns: repeat(3, minmax(0, 1fr))
+        }
+
+        input,
+        select {
+            border: 1px solid var(--b);
+            border-radius: 12px;
+            padding: 8px 10px;
+            width: 100%;
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        a.tab {
+            padding: 8px 12px;
+            border-radius: 12px;
+            border: 1px solid var(--b);
+            text-decoration: none;
+            color: var(--fg)
+        }
+
+        a.tab.active {
+            background: #111827;
+            color: #fff;
+            border-color: #111827
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 2px 8px;
+            border-radius: 999px;
+            color: #fff;
+            font-size: 12px
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>

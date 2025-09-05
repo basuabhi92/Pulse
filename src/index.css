@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* global styles */
+html,
+body,
+#root {
+    height: 100%;
+}
+
+body[data-auth="login"] .card h1 {
+    color: #111827;
+}
+
+body[data-auth="register"] .card h1 {
+    color: #0f766e;
+}
