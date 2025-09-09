@@ -30,10 +30,12 @@ export default function RegisterPage() {
         if (!canSubmit) return;
         try {
             const { token } = await register({ name, email, password: pw });
+            if (!token) throw new Error("Registration failed");
             session.setToken(token);
-            location.href = "/";
+            location.href = "/";           
         } catch (e: any) {
-            setErr(e.message || "Registration failed");
+            const msg = e?.response?.data?.message ?? e?.message ?? "Registration failed";
+            setErr(String(msg));
         }
     }
 

@@ -15,11 +15,12 @@ export default function LoginPage() {
         e?.preventDefault();
         try {
             const { token } = await login({ email, password });
-            // If you add a refresh token later, “remember me” would control persistence scope.
+            if (!token) throw new Error("Login failed");
             session.setToken(token);
             location.href = "/";
         } catch (e: any) {
-            setErr(e.message || "Login failed");
+            const msg = e?.response?.data?.message ?? e?.message ?? "Login failed";
+            setErr(String(msg));
         }
     }
 
