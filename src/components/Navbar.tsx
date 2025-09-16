@@ -16,7 +16,7 @@ export default function Navbar() {
                 {session.token ? (
                     <div className="row" style={{ gap: 8 }}>
                         {Tab("/", "Notifications")}
-                        {Tab("/integrations", "Integrations")}
+                        {Tab("/integrations", "Integrations")} {Tab("/apps", "Apps")}
                         {Tab("/rules", "Rules")}
                         <button className="tab" onClick={() => { session.setToken(undefined); location.href = "/login"; }}>
                             Logout

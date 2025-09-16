@@ -17,7 +17,7 @@ export default function LoginPage() {
             const { token } = await login({ email, password });
             if (!token) throw new Error("Login failed");
             session.setToken(token);
-            location.href = "/";
+            location.href = "/apps";
         } catch (e: any) {
             const msg = e?.response?.data?.message ?? e?.message ?? "Login failed";
             setErr(String(msg));

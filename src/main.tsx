@@ -5,6 +5,8 @@ import App from "./App";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import IntegrationsPage from "./pages/IntegrationsPage";
+import AppsPage from "./pages/AppsPage";
+import GithubIntegrationPage from "./pages/GithubIntegrationPage";
 import NotificationsPage from "./pages/NotificationsPage";
 import RulesPage from "./pages/RulesPage";
 import OAuthCallbackPage from "./pages/OAuthCallbackHandler";
@@ -21,7 +23,9 @@ createRoot(document.getElementById('root')!).render(
       <Routes>
         <Route path="/" element={<App/>}>
           <Route index element={<Guard><NotificationsPage/></Guard>} />
+          <Route path="apps" element={<Guard><AppsPage/></Guard>} />
           <Route path="integrations" element={<Guard><IntegrationsPage/></Guard>} />
+          <Route path="integrations/github" element={<Guard><GithubIntegrationPage/></Guard>} />
           <Route path="rules" element={<Guard><RulesPage/></Guard>} />
           <Route path="oauth/callback" element={<Guard><OAuthCallbackPage/></Guard>} />
           <Route path="apps/:app" element={<Guard><AppNotificationsPage/></Guard>} />  {/* NEW */}
